@@ -1,0 +1,62 @@
+rules_version = '2';
+
+// 吉佳藥局官網｜Firestore 安全規則
+// 原則：訪客只能讀「已上架」的商品與消息、讀網站設定、新增一則格式正確的洽詢。
+//       其餘（未上架內容、所有洽詢、任何修改）只有 admins 集合裡的帳號可以做。
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAdmin() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    // 管理員名單：只能在 Firebase 控制台手動建立，網站端無法新增或修改
+    match /admins/{uid} {
+      allow get: if request.auth != null && request.auth.uid == uid;
+      allow list, write: if false;
+    }
+
+    match /products/{id} {
+      allow read: if resource.data.published == true || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /productImages/{id} {
+      allow get: if resource.data.published == true || isAdmin();
+      allow list: if isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /news/{id} {
+      allow read: if resource.data.published == true || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /settings/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // 洽詢：任何人可新增（限定欄位、長度、需勾選同意），只有管理員能讀、改、刪
+    match /inquiries/{id} {
+      allow create: if validInquiry(request.resource.data);
+      allow read, update, delete: if isAdmin();
+    }
+
+    function validInquiry(d) {
+      return d.keys().hasOnly(['type', 'name', 'contact', 'message', 'item', 'consent', 'status', 'createdAt'])
+        && d.keys().hasAll(['type', 'contact', 'message', 'consent', 'status', 'createdAt'])
+        && d.type in ['寄宿', '商品', '造景與標本', '參觀', '其他']
+        && d.contact is string && d.contact.size() > 0 && d.contact.size() <= 80
+        && d.message is string && d.message.size() > 0 && d.message.size() <= 2000
+        && (!('name' in d) || (d.name is string && d.name.size() <= 40))
+        && (!('item' in d) || (d.item is string && d.item.size() <= 120))
+        && d.consent == true
+        && d.status == 'new'
+        && d.createdAt is timestamp
+        && d.createdAt > request.time - duration.value(10, 'm')
+        && d.createdAt < request.time + duration.value(10, 'm');
+    }
+  }
+}

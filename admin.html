@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>管理後台｜吉佳藥局</title>
+<link rel="icon" href="assets/brand-mark.png">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admin.css">
+<script src="core.js"></script>
+<script src="config.js"></script>
+<script src="data/fallback.js"></script>
+<script type="module" src="admin.js"></script>
+</head>
+<body class="admin">
+<header class="a-head">
+<a class="brand" href="index.html"><span class="brand-name">吉佳藥局<small>管理後台</small></span></a>
+<div class="a-user" id="a-user" hidden><span id="a-email"></span><button class="btn btn-ghost a-sm" id="a-signout" type="button">登出</button></div>
+</header>
+<div id="a-banner" class="a-banner" hidden></div>
+<main class="a-main">
+<section id="a-gate" class="a-gate">
+<h1>管理後台</h1>
+<p id="a-gate-msg">載入中…</p>
+<div id="a-gate-actions"></div>
+</section>
+<section id="a-app" hidden>
+<nav class="a-tabs" role="tablist" aria-label="後台功能">
+<button role="tab" data-tab="products" aria-selected="true">商品</button>
+<button role="tab" data-tab="inquiries" aria-selected="false">洽詢 <span id="a-new-count" class="a-count" hidden></span></button>
+<button role="tab" data-tab="news" aria-selected="false">消息</button>
+<button role="tab" data-tab="settings" aria-selected="false">營業與服務狀態</button>
+</nav>
+<div id="a-view" class="a-view"></div>
+</section>
+</main>
+<dialog id="a-dialog"><div id="a-dialog-body"></div></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:24px">管理後台需要開啟 JavaScript。</p></noscript>
+</body>
+</html>

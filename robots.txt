@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+
+Sitemap: https://jijiapharmacy1110-cyber.github.io/sitemap.xml
