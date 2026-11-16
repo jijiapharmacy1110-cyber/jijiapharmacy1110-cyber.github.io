@@ -2,14 +2,14 @@
 (function () {
   'use strict';
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  document.querySelectorAll('.cat-team-grid, .lulu-gallery').forEach(function (track, n) {
+  document.querySelectorAll('[data-cat-carousel]').forEach(function (track, n) {
     var slides = Array.from(track.children);
     if (slides.length < 2) return;
     var index = 0, paused = reduced.matches, hovered = false, timer;
     track.classList.add('cat-carousel');
     track.id = track.id || 'cat-carousel-' + n;
     track.setAttribute('role', 'region');
-    track.setAttribute('aria-label', n === 0 ? '貓咪團隊輪播' : '嚕嚕生活照片輪播');
+    track.setAttribute('aria-label', track.getAttribute('data-cat-carousel') + '輪播');
     track.tabIndex = 0;
     var controls = document.createElement('div');
     controls.className = 'cat-carousel-controls';

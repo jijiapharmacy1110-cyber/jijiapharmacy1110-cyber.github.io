@@ -15,12 +15,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;family=Noto+Serif+TC:wght@500;600&amp;display=swap">
-<link rel="stylesheet" href="style.css?v=20261116-carousel">
+<link rel="stylesheet" href="style.css?v=20261116-own-cats">
 <script src="core.js" defer></script>
 <script src="config.js" defer></script>
 <script src="data/fallback.js" defer></script>
 <script src="main.js?v=20261116-photos" defer></script>
-<script src="cat-carousel.js?v=20261116-1" defer></script>
+<script src="cat-carousel.js?v=20261116-own-cats" defer></script>
 </head>
 <body data-page="about">
 <a class="skip" href="#main">跳至主要內容</a>
@@ -75,9 +75,9 @@
 <div class="wrap">
 <header class="sec-head"><p class="eyebrow">MEET THE CATS</p><h2 id="cat-team-title">吉佳的貓咪團隊</h2><p>董事長吉多、經理喜多，還有店長嚕嚕。三位毛茸茸的夥伴，一起為吉佳添上溫暖的日常。</p></header>
 <div class="cat-team-grid">
-<article class="cat-team-card" id="jidu"><div class="cat-team-photo"><img src="assets/jidu.jpg" alt="董事長吉多，白色長毛貓趴在坐墊上" width="1536" height="864" loading="lazy"></div><div class="cat-team-copy"><p class="eyebrow">董事長</p><h3>吉多</h3><p>白色蓬鬆的毛、圓圓的臉，就是我們的貓咪董事長吉多。趴在軟墊上的模樣，也很有董事長的架勢。</p></div></article>
-<article class="cat-team-card" id="xiduo"><div class="cat-team-photo"><img src="assets/xiduo.jpg" alt="經理喜多，虎斑貓坐在花朵圖案的床單上" width="864" height="1536" loading="lazy"></div><div class="cat-team-copy"><p class="eyebrow">經理</p><h3>喜多</h3><p>一身虎斑紋、明亮的眼睛，這位是吉佳的貓咪經理喜多。從照片裡認識牠，也看看牠自在休息的日常。</p></div></article>
-<article class="cat-team-card"><div class="cat-team-photo"><img src="assets/lulu-portrait.jpg" alt="店長嚕嚕戴著藍色項圈，抬頭望向鏡頭" width="864" height="1536" loading="lazy"></div><div class="cat-team-copy"><p class="eyebrow">店長</p><h3>嚕嚕</h3><p>戴著藍色項圈、抬頭看向鏡頭的嚕嚕，是大家熟悉的貓咪店長，也是吉佳親切的一面。</p><a class="text-link" href="#lulu">看看嚕嚕的日常 →</a></div></article>
+<article class="cat-team-card" id="jidu"><div class="cat-own-photos" data-cat-carousel="吉多的照片" id="jidu-photos"><figure><img src="assets/jidu.jpg" alt="吉多趴在坐墊上" loading="lazy"></figure><figure><img src="assets/jidu-sitting.jpg" alt="吉多坐在椅子旁" loading="lazy"></figure><figure><img src="assets/jidu-sofa.jpg" alt="吉多在沙發上休息" loading="lazy"></figure></div><div class="cat-team-copy"><p class="eyebrow">董事長</p><h3>吉多</h3><p>白色蓬鬆的毛、圓圓的臉，就是我們的貓咪董事長吉多。趴在軟墊上的模樣，也很有董事長的架勢。</p></div></article>
+<article class="cat-team-card" id="xiduo"><div class="cat-own-photos" data-cat-carousel="喜多的照片" id="xiduo-photos"><figure><img src="assets/xiduo.jpg" alt="喜多坐在花朵床單上" loading="lazy"></figure><figure><img src="assets/xiduo-window.jpg" alt="喜多在窗邊看向鏡頭" loading="lazy"></figure><figure><img src="assets/xiduo-closeup.jpg" alt="喜多抬頭的近照" loading="lazy"></figure><figure><img src="assets/xiduo-rest.jpg" alt="喜多蓋著被子休息" loading="lazy"></figure></div><div class="cat-team-copy"><p class="eyebrow">經理</p><h3>喜多</h3><p>一身虎斑紋、明亮的眼睛，這位是吉佳的貓咪經理喜多。從照片裡認識牠，也看看牠自在休息的日常。</p></div></article>
+<article class="cat-team-card"><div class="cat-own-photos" data-cat-carousel="嚕嚕的照片" id="lulu-photos"><figure><img src="assets/lulu-portrait.jpg" alt="嚕嚕戴著藍色項圈" loading="lazy"></figure><figure><img src="assets/lulu-nap.jpg" alt="嚕嚕午睡時光" loading="lazy"></figure><figure><img src="assets/lulu-sun.jpg" alt="陽光下的嚕嚕" loading="lazy"></figure><figure><img src="assets/lulu-curious.jpg" alt="嚕嚕好奇地看向鏡頭" loading="lazy"></figure></div><div class="cat-team-copy"><p class="eyebrow">店長</p><h3>嚕嚕</h3><p>戴著藍色項圈、抬頭看向鏡頭的嚕嚕，是大家熟悉的貓咪店長，也是吉佳親切的一面。</p><a class="text-link" href="#lulu">看看嚕嚕的日常 →</a></div></article>
 </div>
 <p class="fine cat-team-note">以上為貓咪的趣味職稱。是否在店、活動範圍及是否開放互動，以現場公告與工作人員指引為準；請尊重牠們的休息，不要自行餵食。</p>
 </div></section>
@@ -97,7 +97,7 @@
 <p><a class="text-link" data-href="Instagram連結" data-hide-empty href="https://www.instagram.com/jijia_pharmacy_1110/" target="_blank" rel="noopener noreferrer">到 Instagram 看吉佳日常 ↗</a></p>
 </div>
 </div>
-<div class="wrap lulu-gallery" aria-label="嚕嚕的日常照片"><figure><a href="assets/lulu-nap.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看完整照片：午睡時光"><img src="assets/lulu-nap.jpg" alt="嚕嚕側躺在桌上休息" loading="lazy"></a><figcaption>午睡時光</figcaption></figure><figure><a href="assets/lulu-sun.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看完整照片：陽光下的嚕嚕"><img src="assets/lulu-sun.jpg" alt="嚕嚕躺著曬太陽" loading="lazy"></a><figcaption>陽光下的嚕嚕</figcaption></figure><figure><a href="assets/lulu-curious.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看完整照片：好奇的目光"><img src="assets/lulu-curious.jpg" alt="嚕嚕在座椅上好奇地看著鏡頭" loading="lazy"></a><figcaption>好奇的目光</figcaption></figure></div>
+<div class="wrap lulu-gallery" data-cat-carousel="嚕嚕生活照片" aria-label="嚕嚕的日常照片"><figure><a href="assets/lulu-nap.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看完整照片：午睡時光"><img src="assets/lulu-nap.jpg" alt="嚕嚕側躺在桌上休息" loading="lazy"></a><figcaption>午睡時光</figcaption></figure><figure><a href="assets/lulu-sun.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看完整照片：陽光下的嚕嚕"><img src="assets/lulu-sun.jpg" alt="嚕嚕躺著曬太陽" loading="lazy"></a><figcaption>陽光下的嚕嚕</figcaption></figure><figure><a href="assets/lulu-curious.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看完整照片：好奇的目光"><img src="assets/lulu-curious.jpg" alt="嚕嚕在座椅上好奇地看著鏡頭" loading="lazy"></a><figcaption>好奇的目光</figcaption></figure></div>
 </section>
 
 <section class="section">
