@@ -429,3 +429,15 @@ dialog::backdrop { background: rgba(20, 35, 30, .58); }
 .cat-team-note { margin-top:24px; }
 #cat-team, #jidu, #xiduo { scroll-margin-top:100px; }
 @media(max-width:700px) { .cat-team-grid { grid-template-columns:1fr; } .cat-team-card { width:100%; max-width:440px; margin-inline:auto; } }
+
+/* Progressive enhancement: horizontal photo carousel, original proportions. */
+.cat-carousel { display:flex; gap:24px; overflow-x:auto; scroll-snap-type:x mandatory; overscroll-behavior-x:contain; scrollbar-width:thin; position:relative; padding-bottom:12px; align-items:stretch; }
+.cat-carousel > * { flex:0 0 100%; width:100%; max-width:none; min-width:0; margin:0; scroll-snap-align:start; scroll-snap-stop:always; }
+.cat-carousel .cat-team-photo { height:clamp(240px,45vw,420px); aspect-ratio:auto; }
+.lulu-gallery.cat-carousel img { width:100%; height:clamp(240px,50vw,480px); object-fit:contain; background:#e9e4d8; }
+.cat-carousel-controls { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:14px; margin:18px auto 30px; }
+.cat-carousel-controls button { min-width:44px; min-height:44px; border:1px solid #a7b0a0; border-radius:24px; background:#faf8f1; color:#244c40; padding:8px 18px; cursor:pointer; font:inherit; }
+.cat-carousel:focus-visible, .cat-carousel-controls button:focus-visible { outline:3px solid #9c7446; outline-offset:3px; }
+@media(min-width:800px) { .cat-team-grid.cat-carousel > .cat-team-card { display:grid; grid-template-columns:1fr 1fr; align-items:center; } }
+
+.lulu-gallery.cat-carousel > figure, .cat-team-grid.cat-carousel > .cat-team-card { max-width:none; margin:0; }
