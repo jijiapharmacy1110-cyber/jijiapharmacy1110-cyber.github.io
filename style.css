@@ -418,3 +418,14 @@ dialog::backdrop { background: rgba(20, 35, 30, .58); }
 .lulu-gallery img { display:block; width:100%; height:auto; }
 .lulu-gallery figcaption { padding:14px; text-align:center; font-size:14px; }
 @media(max-width:640px) { .lulu-gallery { grid-template-columns:1fr; gap:20px; } .lulu-gallery figure { max-width:440px; width:100%; margin:auto; } }
+
+/* Cat team: fixed frames preserve each photo's proportions. */
+.cat-team-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+.cat-team-card { background:var(--cream,#faf8f1); border:1px solid #d6d2bf; border-radius:18px; overflow:hidden; min-width:0; }
+.cat-team-photo { aspect-ratio:4/3; background:#e9e4d8; overflow:hidden; }
+.cat-team-photo img { display:block; width:100%; height:100%; object-fit:contain; }
+.cat-team-copy { padding:24px; }
+.cat-team-copy h3 { margin-top:0; }
+.cat-team-note { margin-top:24px; }
+#cat-team, #jidu, #xiduo { scroll-margin-top:100px; }
+@media(max-width:700px) { .cat-team-grid { grid-template-columns:1fr; } .cat-team-card { width:100%; max-width:440px; margin-inline:auto; } }
