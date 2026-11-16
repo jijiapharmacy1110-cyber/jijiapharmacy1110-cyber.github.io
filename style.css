@@ -289,7 +289,7 @@ dialog::backdrop { background: rgba(20, 35, 30, .58); }
 
 /* ---------- 其他內頁 ---------- */
 .sign-fig { margin: 0; text-align: center; }
-.sign-fig img { width: 100%; max-width: 380px; margin-inline: auto; border-radius: 12px; background: var(--cream); }
+.sign-fig img { width: 100%; height: auto; object-fit: contain; max-width: 380px; margin-inline: auto; border-radius: 12px; background: var(--cream); }
 .sign-fig.no-img::before { content: "招牌設計示意圖"; display: grid; place-items: center; min-height: 240px; border: 1px dashed #c9b48a; border-radius: 12px; color: var(--muted); }
 .sign-fig figcaption { margin-top: 10px; font-size: 13px; color: var(--muted); }
 .info-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
