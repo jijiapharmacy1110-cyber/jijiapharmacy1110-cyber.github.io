@@ -7,9 +7,9 @@ window.JIJIA_CONFIG = {
      projectId 與 apiKey 都填了，網站就改從後台讀資料，下面的 sheets 會被忽略。
      這兩個值本來就是公開的，可以放在這裡；真正的保護來自 Firebase 的安全規則。 */
   firebase: {
-    projectId: '',
-    apiKey: '',
-    authDomain: '' // 留空會用 「projectId.firebaseapp.com」
+    projectId: 'jijia2026',
+    apiKey: 'AIzaSyCmCIR2l5XZO3kHcoBeNbdXwPbpYAOjRLQ',
+    authDomain: 'jijia2026.firebaseapp.com' // 留空會用 「projectId.firebaseapp.com」
   },
   sheets: {
     products: '', // 「商品」分頁的 CSV 網址（或網站內的相對路徑，例如 data/products.csv）
