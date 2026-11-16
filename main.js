@@ -187,7 +187,7 @@
     $$('[data-href]').forEach(function (a) {
       var key = a.getAttribute('data-href'), href = '';
       if (key === '電話') href = C.telHref(S['電話']);
-      else if (key === '地址') href = C.mapsHref(S['地址']);
+      else if (key === '地址') href = C.safeUrl(S['地圖連結']) || 'https://maps.app.goo.gl/Ly3DMyrHjfLKcC1f6';
       else href = C.safeUrl(S[key]);
       if (href) {
         a.setAttribute('href', href);
@@ -608,3 +608,4 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
+

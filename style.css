@@ -407,3 +407,14 @@ dialog::backdrop { background: rgba(20, 35, 30, .58); }
 .inq-done { margin-top: 20px; padding: 20px 22px; background: #dcebdd; border-radius: 12px; color: #1f5130; }
 .inq-done strong { display: block; font-size: 17px; }
 .inq-done p { margin: 4px 0 0; }
+
+
+/* Original Jijia identity and Lulu photographs */
+.lulu-portrait { overflow:hidden; }
+.lulu-portrait img.lulu-photo { width:100%; height:100%; object-fit:cover; object-position:center 36%; mix-blend-mode:normal; display:block; }
+.lulu-portrait-large { width:100%; max-width:360px; height:auto; aspect-ratio:4/5; margin-bottom:0; }
+.lulu-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin-top:40px; align-items:start; }
+.lulu-gallery figure { margin:0; border:1px solid var(--line,#d6d2bf); border-radius:14px; overflow:hidden; background:var(--cream,#f8f6ef); }
+.lulu-gallery img { display:block; width:100%; height:auto; }
+.lulu-gallery figcaption { padding:14px; text-align:center; font-size:14px; }
+@media(max-width:640px) { .lulu-gallery { grid-template-columns:1fr; gap:20px; } .lulu-gallery figure { max-width:440px; width:100%; margin:auto; } }
